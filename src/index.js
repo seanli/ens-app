@@ -10,6 +10,10 @@ import { GlobalStateProvider } from 'globalState'
 import 'globalStyles'
 import { setupClient } from 'apolloClient'
 
+import Fortmatic from 'fortmatic'
+
+let fm = new Fortmatic('pk_test_90202AABAA3E731A')
+
 window.addEventListener('load', async () => {
   let client
 
@@ -21,11 +25,12 @@ window.addEventListener('load', async () => {
     ) {
       await setupENS({
         reloadOnAccountsChange: true,
-        customProvider: 'http://localhost:8545',
+        customProvider: fm.getProvider(),
         ensAddress: process.env.REACT_APP_ENS_ADDRESS
       })
     } else {
       await setupENS({
+        customProvider: fm.getProvider(),
         reloadOnAccountsChange: false
       })
     }
