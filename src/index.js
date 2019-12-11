@@ -12,7 +12,7 @@ import { setupClient } from 'apolloClient'
 
 import Fortmatic from 'fortmatic'
 
-let fm = new Fortmatic('pk_test_90202AABAA3E731A')
+let fm = new Fortmatic('pk_live_6836EE5A179281AE')
 
 window.addEventListener('load', async () => {
   let client
